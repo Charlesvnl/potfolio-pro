@@ -5,25 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio - Charles Venel</title>
 <style>
-/* --- STYLES GÉNÉRAUX --- */
-html, body {
-margin: 0;
-padding: 0;
-}
+html, body { margin: 0; padding: 0; }
 body {
 font-family: "Poppins", Arial, sans-serif;
 background: linear-gradient(135deg, #1e1f29, #2e3350);
 color: #f4f4f4;
 line-height: 1.6;
-scroll-behavior: smooth; /* transition fluide entre sections */
+scroll-behavior: smooth;
 }
+section, header { scroll-margin-top: 90px; }
 
-/* Chaque section ancrée prend en compte la navbar sticky */
-section, header {
-scroll-margin-top: 90px; /* offset pour l'ancre */
-}
-
-/* --- ANIMATIONS --- */
+/* Animations */
 @keyframes fadeInUp {
 0% { opacity: 0; transform: translateY(40px); }
 100% { opacity: 1; transform: translateY(0); }
@@ -33,9 +25,9 @@ scroll-margin-top: 90px; /* offset pour l'ancre */
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 0.9s; }
 
-/* --- NAVBAR --- */
+/* Navbar */
 nav {
-background: rgba(255, 255, 255, 0.05);
+background: rgba(255,255,255,0.05);
 backdrop-filter: blur(6px);
 display: flex;
 justify-content: space-between;
@@ -50,22 +42,17 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
 nav li { margin-left: 22px; }
 nav a {
-text-decoration: none;
-color: #f4f4f4;
-font-weight: 500;
-transition: color 0.3s;
+text-decoration: none; color: #f4f4f4;
+font-weight: 500; transition: color 0.3s;
 }
 nav a:hover, nav a.active { color: #ffcc66; }
 
-/* --- HEADER --- */
-header {
-text-align: center;
-padding: 80px 20px 50px;
-}
+/* Header */
+header { text-align: center; padding: 80px 20px 50px; }
 header h1 { font-size: 2.8em; margin-bottom: 15px; }
 header p { color: #cfcfcf; font-size: 1.1em; }
 
-/* --- PHOTO DE PROFIL --- */
+/* Photo */
 .profile-photo {
 width: 160px; height: 160px; border-radius: 50%;
 object-fit: cover; border: 3px solid #ffcc66;
@@ -77,14 +64,14 @@ transform: scale(1.08) rotate(3deg);
 box-shadow: 0 0 40px #ffcc66b3;
 }
 
-/* --- SECTIONS --- */
+/* Sections */
 section {
 max-width: 900px;
 margin: 50px auto;
-background: rgba(255, 255, 255, 0.05);
+background: rgba(255,255,255,0.05);
 border-radius: 12px;
 padding: 40px;
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 h2 { font-size: 1.8em; color: #ffcc66; margin-bottom: 18px; }
 p { font-size: 1.05em; color: #e4e4e4; }
@@ -92,47 +79,25 @@ ul { list-style: none; padding-left: 0; }
 ul li::before { content: "• "; color: #ffcc66; }
 .muted { color: #cfcfcf; }
 
-/* --- BLOCS DE TEXTE LONGS --- */
-.rich p { margin-top: 12px; }
-
-/* --- GRILLE COMPÉTENCES --- */
-.skills {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 14px 24px;
-margin-top: 14px;
-}
+/* Compétences */
+.skills { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; margin-top: 12px; }
 .tag {
-display: inline-block;
-padding: 8px 12px;
-border: 1px solid #ffcc66;
-border-radius: 999px;
-font-size: 0.95em;
+display: inline-block; padding: 8px 12px; border: 1px solid #ffcc66;
+border-radius: 999px; font-size: 0.95em; text-align: center;
 }
 
-/* --- FOOTER --- */
-footer {
-text-align: center;
-padding: 30px;
-font-size: 0.9em;
-color: #999;
-}
+footer { text-align: center; padding: 30px; font-size: 0.9em; color: #999; }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 700px) {
-nav { flex-direction: column; align-items: flex-start; }
-nav ul { flex-direction: column; width: 100%; margin-top: 10px; }
-nav li { margin: 10px 0 0 0; }
-header h1 { font-size: 2.2em; }
-section { padding: 25px; }
-.profile-photo { width: 130px; height: 130px; }
-.skills { grid-template-columns: 1fr; }
+@media (max-width:700px){
+nav { flex-direction: column; align-items:flex-start; }
+nav ul { flex-direction:column; width:100%; margin-top:10px; }
+nav li { margin:8px 0; }
+header h1{font-size:2.2em;}
+.profile-photo{width:130px;height:130px;}
 }
 </style>
 </head>
-
 <body>
-<!-- NAVIGATION -->
 <nav class="fade-in">
 <div class="logo">Charles Venel</div>
 <ul>
@@ -141,11 +106,12 @@ section { padding: 25px; }
 <li><a href="#parcours" class="nav-link">Parcours</a></li>
 <li><a href="#projets" class="nav-link">Projets</a></li>
 <li><a href="#competences" class="nav-link">Compétences</a></li>
+<li><a href="#reussites" class="nav-link">Réussites</a></li>
+<li><a href="#aspirations" class="nav-link">Aspirations</a></li>
 <li><a href="#contact" class="nav-link">Contact</a></li>
 </ul>
 </nav>
 
-<!-- ACCUEIL -->
 <header id="accueil" class="fade-in delay-1">
 <img src="profil.jpg" alt="Photo de profil de Charles Venel" class="profile-photo fade-in delay-2">
 <h1>🧭 Qui suis-je ?</h1>
@@ -154,46 +120,30 @@ section { padding: 25px; }
 
 <section class="fade-in delay-1">
 <h2>À propos de moi</h2>
-<p>
-Je m’appelle <strong>Charles Venel</strong>, j’ai 20 ans et je suis actuellement en
-<strong>licence de commercialisation des services et produits sportifs</strong> à l’ILEPS.
-Passionné par le sport depuis toujours, j’ai choisi d’en faire le cœur de mon parcours professionnel,
-notamment à travers le <strong>management</strong>, le <strong>marketing</strong> et la <strong>relation client</strong>.
-</p>
-<p>
-Dans un contexte professionnel, je dirais que je suis quelqu’un de
-<strong>dynamique</strong>, <strong>analytique</strong> et <strong>force de proposition</strong>.
-Je m’adapte facilement aux différentes situations, je sais communiquer efficacement, et j’accorde beaucoup
-d’importance à l’écoute et à la collaboration en équipe.
-</p>
+<p>Je m’appelle <strong>Charles Venel</strong>, j’ai 20 ans et je suis actuellement en <strong>licence de commercialisation des services et produits sportifs</strong> à l’ILEPS. Passionné par le sport depuis toujours, j’ai choisi d’en faire le cœur de mon parcours professionnel, notamment à travers le <strong>management</strong>, le <strong>marketing</strong> et la <strong>relation client</strong>.</p>
+<p>Dans un contexte professionnel, je dirais que je suis quelqu’un de <strong>dynamique</strong>, <strong>analytique</strong> et <strong>force de proposition</strong>. Je m’adapte facilement aux différentes situations, je sais communiquer efficacement, et j’accorde beaucoup d’importance à l’écoute et à la collaboration en équipe.</p>
 <h2>💡 Mes trois valeurs principales</h2>
 <ul>
-<li><strong>Esprit d’équipe :</strong> travailler ensemble, avancer collectivement et apprendre les uns des autres sont pour moi essentiels.</li>
+<li><strong>Esprit d’équipe :</strong> travailler ensemble, avancer collectivement et apprendre les uns des autres.</li>
 <li><strong>Ambition :</strong> j’aime me fixer des objectifs élevés et faire ce qu’il faut pour les atteindre.</li>
-<li><strong>Curiosité :</strong> j’aime découvrir, comprendre et apprendre de nouvelles choses dans tout ce que j’entreprends.</li>
+<li><strong>Curiosité :</strong> j’aime découvrir, comprendre et apprendre de nouvelles choses.</li>
 </ul>
 </section>
 
-<!-- ANECDOTE -->
-<section id="anecdote" class="fade-in delay-2 rich">
+<section id="anecdote" class="fade-in delay-2">
 <h2>📍 Une anecdote qui me représente bien</h2>
-<p>Dans le cadre de mon alternance chez Decathlon Groslay, je suis en charge du rayon Seconde Vie, qui a un rôle particulièrement important pour notre magasin, situé dans une zone où le pouvoir d’achat est plus limité. Cette offre de produits reconditionnés répond vraiment à un besoin local.</p>
-<p>Un jour, on a dû faire face à une rupture de stock importante sur certains articles clés. J’ai alors proposé une réorganisation complète du rayon, en mettant en avant d’autres produits, en retravaillant la mise en avant et en adaptant notre offre pour continuer à attirer les clients. Grâce à cette réactivité, on a non seulement évité une baisse d’activité, mais on a aussi réussi à donner plus de visibilité à la Seconde Vie dans tout le magasin.</p>
-<p>Cette expérience m’a appris à réagir vite, trouver des solutions concrètes et surtout à toujours garder en tête les besoins réels des clients.</p>
+<p>Dans le cadre de mon alternance chez Decathlon Groslay, je suis en charge du rayon Seconde Vie, qui a un rôle particulièrement important pour notre magasin. Cette offre de produits reconditionnés répond vraiment à un besoin local.</p>
+<p>Un jour, nous avons dû faire face à une rupture de stock importante. J’ai proposé une réorganisation complète du rayon, en mettant en avant d’autres produits, en retravaillant la mise en avant et en adaptant notre offre. Grâce à cette réactivité, nous avons évité une baisse d’activité et donné plus de visibilité à la Seconde Vie dans tout le magasin.</p>
+<p>Cette expérience m’a appris à réagir vite, trouver des solutions concrètes et toujours garder en tête les besoins réels des clients.</p>
 </section>
 
-<!-- PARCOURS -->
-<section id="parcours" class="fade-in delay-2 rich">
+<section id="parcours" class="fade-in delay-2">
 <h2>📚 Mon parcours</h2>
-<p>Après l’obtention de mon baccalauréat général avec les spécialités SES (Sciences Économiques et Sociales) et HGGSP (Histoire-Géographie, Géopolitique et Sciences Politiques), obtenu avec la mention Bien, j’ai décidé de poursuivre mes études dans un domaine qui me passionne : le sport et son environnement professionnel.</p>
-<p>J’ai intégré l’ILEPS en licence STAPS – Management du sport. Ma première année s’est déroulée en formation initiale, puis j’ai choisi d’entrer en alternance dès la deuxième année, ce qui m’a permis de gagner en compétences pratiques et en expérience de terrain. J’ai d’abord travaillé pendant trois mois chez Jump Parc, avant de rejoindre Decathlon où j’occupe aujourd’hui un poste d’apprenti manager au rayon Cycle – Seconde Vie. Cette expérience en immersion dans la réalité du commerce sportif m’a permis de comprendre les enjeux stratégiques, humains et organisationnels liés à la gestion d’un rayon et au développement d’un service.</p>
-<p>Parmi les matières qui m’ont le plus intéressé, les SES et l’HGGSP ont particulièrement marqué mon parcours. Elles m’ont appris à analyser des problématiques complexes, à développer un regard critique sur les dynamiques économiques et géopolitiques, et à comprendre les comportements humains dans un contexte global — des compétences qui s’avèrent précieuses dans le management et le commerce.</p>
-<p>Mon parcours s’est également enrichi grâce à différentes expériences associatives et sportives. J’ai participé à l’organisation de tournois pour enfants dans le cadre de mon engagement chez les scouts, ainsi qu’à Jump Parc, où j’ai contribué à la mise en place d’événements sportifs ludiques. J’ai également eu l’occasion de donner des cours de boxe, mon sport de prédilection que je pratique depuis de nombreuses années. Ces expériences m’ont appris à gérer un groupe, à transmettre des valeurs, à adapter ma communication à différents publics et à prendre des initiatives dans un cadre collectif.</p>
-<p>Côté professionnel, mon parcours ne se limite pas à mes missions en entreprise. J’ai également travaillé sur divers projets personnels, notamment la création de mon entreprise e-commerce en 2023, pour laquelle j’ai conçu et développé des produits, créé des boutiques en ligne et mis en place des stratégies de vente et de communication. J’ai aussi participé à diverses activités ponctuelles comme des brocantes, qui m’ont permis de développer mon sens du contact et de la négociation.</p>
-<p>Toutes ces expériences — scolaires, associatives, sportives, professionnelles et entrepreneuriales — m’ont permis de grandir aussi bien sur le plan personnel que professionnel. Elles ont renforcé ma capacité d’adaptation, développé mon sens critique, affiné ma communication et m’ont appris à analyser les situations avec recul et stratégie. Elles m’ont aussi permis de mieux comprendre ce qui me motive profondément : créer de la valeur, accompagner les autres et faire avancer des projets concrets.</p>
+<p>Après l’obtention de mon baccalauréat général avec les spécialités SES et HGGSP, obtenu avec mention Bien, j’ai intégré l’ILEPS en licence STAPS – Management du sport. Ma première année s’est déroulée en formation initiale, puis j’ai choisi d’entrer en alternance dès la deuxième année. J’ai travaillé chez Jump Parc puis j’ai rejoint Decathlon, où j’occupe aujourd’hui un poste d’apprenti manager au rayon Cycle – Seconde Vie.</p>
+<p>Ces expériences m’ont permis de développer des compétences concrètes en gestion, stratégie commerciale et pilotage d’équipe, tout en renforçant ma compréhension du commerce sportif et de la relation client.</p>
+<p>Mes matières préférées comme les SES et l’HGGSP m’ont appris à analyser des problématiques complexes et à comprendre les dynamiques économiques et humaines du management.</p>
 </section>
 
-<!-- PROJETS -->
 <section id="projets" class="fade-in delay-3">
 <h2>🚀 Mes projets</h2>
 <ul>
@@ -201,58 +151,72 @@ d’importance à l’écoute et à la collaboration en équipe.
 <li><strong>Aureline Beauty :</strong> marque e-commerce spécialisée dans les produits de maquillage haut de gamme.</li>
 <li><strong>Projet Seconde Vie Decathlon :</strong> amélioration du rayon vélos reconditionnés et analyse des ventes omnicanales.</li>
 </ul>
-<p class="muted">(+ D’autres projets arrivent bientôt 👀)</p>
 </section>
 
-<!-- COMPÉTENCES -->
 <section id="competences" class="fade-in delay-3">
 <h2>🛠️ Mes compétences</h2>
-<p>Au fil de mes études, de mon alternance et de mes différents projets, j’ai développé un ensemble de compétences qui me permettent aujourd’hui d’être polyvalent, opérationnel et créatif dans mon travail.</p>
+<p>Sur le plan pratique, j’ai appris à gérer différents types de projets, à construire et mettre en place des stratégies commerciales, et à assurer un suivi client de qualité. Mon expérience chez Decathlon m’a permis d’acquérir des compétences solides en gestion opérationnelle, en merchandising, en mise en avant produit, mais aussi en analyse de données de vente pour prendre des décisions pertinentes.</p>
+<p>Je maîtrise également la création et la gestion de campagnes publicitaires sur les réseaux sociaux (Meta, Instagram, TikTok, etc.), ce qui me permet de promouvoir efficacement des produits ou services.</p>
+<p>Mon expérience e-commerce m’a appris à créer des boutiques en ligne de A à Z : choix des produits, branding, stratégie marketing, campagnes publicitaires et analyse des résultats.</p>
+<p>Je sais aussi entretenir et réparer du matériel (cycles, trottinettes), ce qui renforce mon expertise terrain.</p>
+<p>Mes atouts humains : <strong>esprit d’équipe</strong>, <strong>créativité</strong>, <strong>adaptabilité</strong> et <strong>écoute</strong>. Côté outils, je maîtrise Word, Excel, PowerPoint, Canva, Shopify et les réseaux sociaux professionnels.</p>
+<h3>💬 Compétences clés</h3>
 <div class="skills">
-<span class="tag">Management d’équipe</span>
+<span class="tag">Analyse & stratégie commerciale</span>
+<span class="tag">Gestion opérationnelle</span>
+<span class="tag">Marketing digital</span>
+<span class="tag">Publicité Meta / TikTok</span>
+<span class="tag">Merchandising</span>
+<span class="tag">E-commerce / Shopify</span>
 <span class="tag">Relation client</span>
-<span class="tag">Merchandising & mise en avant</span>
-<span class="tag">Analyse de données (KPI)</span>
-<span class="tag">Marketing & communication</span>
-<span class="tag">E-commerce & Shopify</span>
-<span class="tag">Organisation d’événements</span>
-<span class="tag">Coaching sportif (boxe)</span>
-<span class="tag">Résolution de problèmes</span>
-<span class="tag">Adaptabilité</span>
-<span class="tag">Négociation</span>
+<span class="tag">Maintenance cycles</span>
+<span class="tag">Communication</span>
+<span class="tag">Créativité & innovation</span>
 <span class="tag">Esprit d’équipe</span>
+<span class="tag">Adaptabilité</span>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="fade-in delay-3">
-<h2>📬 Me contacter</h2>
-<p>📧 Email : <a href="mailto:charles.venel@gmail.com" style="color:#ffcc66;">charles.venel@gmail.com</a></p>
-<p>💼 LinkedIn : <a href="https://www.linkedin.com" target="_blank" style="color:#ffcc66;">Mon profil</a></p>
-<p>📍 Basé à : Cergy, France</p>
+<section id="reussites" class="fade-in delay-3">
+<h2>🏆 Réussites & fiertés</h2>
+<p>Si je devais retenir une chose dont je suis vraiment fier, c’est mon parcours dans sa globalité. Depuis tout petit, j’ai dû composer avec des troubles de l’attention qui rendaient l’apprentissage difficile, mais j’ai toujours persévéré. Grâce à cette détermination, j’ai pu créer mon entreprise, la faire tourner, poursuivre mes études et décrocher une alternance dans un domaine qui me passionne.</p>
+<p>Mon premier combat de boxe reste aussi une expérience marquante : j’ai su canaliser le stress, dépasser mes limites et remporter le combat. Cela m’a appris à garder le contrôle sous pression.</p>
+<p>Enfin, la réussite de ma boutique en ligne a été une immense fierté : concevoir un produit, créer la marque, gérer le site, lancer les campagnes et voir les ventes arriver, c’est une vraie récompense.</p>
+<p>Mon prochain grand défi : atteindre la liberté financière en développant mes propres marques et projets.</p>
 </section>
 
-<!-- FOOTER -->
+<section id="aspirations" class="fade-in delay-3">
+<h2>🚀 Mes aspirations</h2>
+<p>À la fin de ma formation, j’aimerais évoluer vers un poste qui combine leadership, gestion de projet et stratégie commerciale. Je veux prendre des responsabilités, coordonner des équipes et participer activement à la croissance d’une structure.</p>
+<p>Les secteurs qui m’attirent : sport, e-commerce, vente, événementiel et nouvelles technologies. J’ai aussi un fort intérêt pour l’e-sport.</p>
+<p>Dans les années à venir, je souhaite renforcer mes connaissances en stratégie marketing avancée, gestion d’équipe et négociation, tout en développant mes projets entrepreneuriaux.</p>
+<p>🎯 <strong>Mon job de rêve :</strong> atteindre la liberté financière en développant mes propres marques, travailler depuis n’importe où dans le monde, et bâtir des projets durables tout en gardant du temps pour mes proches.</p>
+</section>
+
+<section id="contact" class="fade-in delay-3">
+<h2>📬 Me contacter</h2>
+<p>📧 <a href="mailto:charles.venel@gmail.com" style="color:#ffcc66;">charles.venel@gmail.com</a></p>
+<p>💼 <a href="https://www.linkedin.com" target="_blank" style="color:#ffcc66;">LinkedIn</a></p>
+<p>📍 Cergy, France</p>
+</section>
+
 <footer class="fade-in delay-3">
 &copy; 2025 - Portfolio de Charles Venel | Réalisé avec ❤️ sur GitHub Pages
 </footer>
 
-<!-- JS (facultatif) : Active le lien du menu correspondant à la section visible -->
 <script>
 const links = document.querySelectorAll('.nav-link');
 const sections = [...document.querySelectorAll('header, section')];
-
-const io = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-const id = entry.target.getAttribute('id');
-if (!id) return;
-links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+const io = new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+const id=e.target.getAttribute('id');
+if(!id)return;
+links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
 }
 });
-}, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
-
-sections.forEach(sec => sec.id && io.observe(sec));
+},{rootMargin:'-40% 0px -55% 0px',threshold:0.01});
+sections.forEach(s=>s.id&&io.observe(s));
 </script>
 </body>
 </html>
