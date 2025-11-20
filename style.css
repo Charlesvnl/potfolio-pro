@@ -438,3 +438,11 @@ strong {
     align-items: stretch;
   }
 }
+.cv-card {
+  text-align: center;
+  padding: 2rem;
+}
+.cv-card p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
