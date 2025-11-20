@@ -446,3 +446,12 @@ strong {
   margin-bottom: 1rem;
   font-size: 1rem;
 }
+.linkedin-link {
+  color: #ffcc66;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.linkedin-link:hover {
+  opacity: 0.8;
+}
